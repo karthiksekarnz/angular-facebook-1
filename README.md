@@ -1,6 +1,8 @@
 AngularJS Directive for responsive Facebook Like Box
 =============
 
+This Angular module needs jQuery to work, `jqlite`  won't cut it.
+
 Add the 'FB' module to your dependencies, use the directive like:
 
 ```html
