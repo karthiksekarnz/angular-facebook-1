@@ -22,20 +22,24 @@ angular
         
         function request(){
             if (!requested) {
-                requestAnimationFrame(update);
                 requested = true;
+                requestAnimationFrame(update);
             }
         }
         
         function update(){
-          $scope.width = $element.parent().width();
-          $scope.$evalAsync(function() {
-            FB.XFBML.parse($element[0]);
-            requested = false;
-          }, 50, false);
+            $scope.$evalAsync(function() {
+                $scope.width = $element.parent().width();
+                $scope.$applyAsync(function() {
+                    FB.XFBML.parse($element[0], function(){
+                        requested = false;
+                    });
+                });
+            });
         }
 
         $window.addEventListener('resize', request);
       }
     };
 }]);
+
