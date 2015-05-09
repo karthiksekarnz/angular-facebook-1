@@ -30,7 +30,7 @@ angular
           }, 50, false);
         }
 
-        $window.on('resize', request);
+        $window.addEventListener('resize', request);
       }
     };
 }]);
