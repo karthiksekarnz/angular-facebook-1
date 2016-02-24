@@ -83,3 +83,4 @@ app.directive('fbLike', ['$window', function($window) {
         $window.addEventListener('resize', request);
       }
     };
+}]);
